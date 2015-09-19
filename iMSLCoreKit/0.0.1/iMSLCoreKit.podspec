@@ -7,16 +7,25 @@ Pod::Spec.new do |spec|
     spec.summary                    = 'CoreKit of basic functionality for iOS.'
     spec.source                     = { :git => 'https://github.com/milanhorvatovic/iMSLCoreKit.git', :tag => spec.version.to_s }
 
-    spec.default_subspec            = 'FW'
+    spec.default_subspec            = 'Dynamic'
 
-    spec.subspec 'FW' do |ss|
-        ss.source_files               = 'iMSLCoreKit.framework/Headers/*.h'
-        ss.public_header_files        = 'iMSLCoreKit.framework/Headers/*.h'
-        ss.private_header_files       = 'iMSLCoreKit.framework/PrivateHeaders/*.h'
-        ss.vendored_frameworks        = 'iMSLCoreKit.framework'
+    spec.subspec 'Dynamic' do |ss|
+        ss.source_files               = 'Dynamic/iMSLCoreKit.framework/Headers/*.h'
+        ss.public_header_files        = 'Dynamic/iMSLCoreKit.framework/Headers/*.h'
+        ss.private_header_files       = 'Dynamic/iMSLCoreKit.framework/PrivateHeaders/*.h'
+        ss.vendored_frameworks        = 'Dynamic/iMSLCoreKit.framework'
 
         ss.ios.deployment_target      = "8.0"
     end
+
+#    spec.subspec 'Static' do |ss|
+#        ss.source_files                 = 'Static/iMSLCoreKit.framework/Headers/*.h'
+#        ss.public_header_files          = 'Static/iMSLCoreKit.framework/Headers/*.h'
+#        ss.private_header_files         = 'Static/iMSLCoreKit.framework/PrivateHeaders/*.h'
+#        ss.vendored_libraries           = 'Static/iMSLCoreKit.framework'
+#
+#        ss.ios.deployment_target        = "7.1"
+#    end
 
     spec.ios.framework              = 'UIKit', 'Foundation', 'CoreData'
     spec.platform                   = :ios, "8.0"
