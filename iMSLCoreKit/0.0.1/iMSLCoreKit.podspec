@@ -18,17 +18,17 @@ Pod::Spec.new do |spec|
         ss.ios.deployment_target      = "8.0"
     end
 
-#    spec.subspec 'Static' do |ss|
+    spec.subspec 'Static' do |ss|
 #        ss.source_files                 = 'Static/iMSLCoreKit.framework/Headers/*.h'
 #        ss.public_header_files          = 'Static/iMSLCoreKit.framework/Headers/*.h'
 #        ss.private_header_files         = 'Static/iMSLCoreKit.framework/PrivateHeaders/*.h'
 #        ss.vendored_libraries           = 'Static/iMSLCoreKit.framework'
-#
-#        ss.ios.deployment_target        = "7.1"
-#    end
+
+        ss.ios.deployment_target        = "7.1"
+    end
 
     spec.ios.framework              = 'UIKit', 'Foundation', 'CoreData'
-    spec.platform                   = :ios, "8.0"
+    spec.platform                   = :ios, "9.0"
     spec.requires_arc               = true
     spec.ios.dependency             'UICKeyChainStore'
     spec.ios.dependency             'JRSwizzle'
