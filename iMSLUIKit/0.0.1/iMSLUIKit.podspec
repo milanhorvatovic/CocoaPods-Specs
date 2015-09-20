@@ -31,9 +31,22 @@ Pod::Spec.new do |spec|
         ss.public_header_files          = 'Static/Library/Headers/*.h'
 #        ss.private_header_files         = 'Static/Library/PrivateHeaders/*.h'
         ss.vendored_libraries           = 'Static/Library/libiMSLUIKit.a'
-#        ss.dependency                 'iMSLCoreKit/Static'
+        ss.dependency                 'iMSLCoreKit/Static'
 
-        ss.ios.deployment_target        = "7.1"
+        ss.ios.deployment_target        = "7.0"
+    end
+
+    spec.subspec 'StaticFramework' do |ss|
+        ss.vendored_frameworks          = 'Static/Framework/iMSLUIKit.framework'
+        ss.source_files                 = [
+            'Static/Framework/iMSLUIKit.framework/Versions/A/Headers/*.h'
+#            , 'Static/Framework/iMSLUIKit.framework/Versions/A/PrivateHeaders/*.h'
+        ]
+        ss.public_header_files          = 'Static/Framework/iMSLUIKit.framework/Versions/A/Headers/*.h'
+        ss.private_header_files         = 'Static/Framework/iMSLUIKit.framework/Versions/A/PrivateHeaders/*.h'
+        ss.dependency                 'iMSLCoreKit/StaticFramework'
+
+        ss.ios.deployment_target        = "7.0"
     end
 
     spec.ios.framework              = 'UIKit', 'Foundation', 'MapKit', 'QuartzCore'
