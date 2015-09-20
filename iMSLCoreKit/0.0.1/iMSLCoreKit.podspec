@@ -17,21 +17,30 @@ Pod::Spec.new do |spec|
     spec.default_subspec            = 'Dynamic'
 
     spec.subspec 'Dynamic' do |ss|
+        ss.vendored_frameworks        = 'Dynamic/iMSLCoreKit.framework'
         ss.source_files               = 'Dynamic/iMSLCoreKit.framework/Headers/*.h'
         ss.public_header_files        = 'Dynamic/iMSLCoreKit.framework/Headers/*.h'
         ss.private_header_files       = 'Dynamic/iMSLCoreKit.framework/PrivateHeaders/*.h'
-        ss.vendored_frameworks        = 'Dynamic/iMSLCoreKit.framework'
 
         ss.ios.deployment_target      = "8.0"
     end
 
     spec.subspec 'Static' do |ss|
+        ss.vendored_libraries           = 'Static/Library/libiMSLCoreKit.a'
         ss.source_files                 = 'Static/Library/Headers/*.h'
         ss.public_header_files          = 'Static/Library/Headers/*.h'
 #        ss.private_header_files         = 'Static/Library/PrivateHeaders/*.h'
-        ss.vendored_libraries           = 'Static/Library/libiMSLCoreKit.a'
 
-        ss.ios.deployment_target        = "7.1"
+        ss.ios.deployment_target        = "7.0"
+    end
+
+    spec.subspec 'StaticFramework' do |ss|
+        ss.vendored_frameworks          = 'Static/Framework/iMSLCoreKit.framework'
+        ss.source_files                 = 'Static/Framework/iMSLCoreKit.framework/Versions/A/Headers/*.h'
+#        ss.public_header_files          = 'Static/Framework/iMSLCoreKit.framework/Versions/A/Headers/*.h'
+#        ss.private_header_files         = 'Static/Framework/iMSLCoreKit.framework/Versions/A/PrivateHeaders/*.h'
+
+        ss.ios.deployment_target        = "7.0"
     end
 
     spec.ios.framework              = 'UIKit', 'Foundation', 'CoreData'
