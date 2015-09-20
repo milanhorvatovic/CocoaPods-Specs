@@ -36,7 +36,10 @@ Pod::Spec.new do |spec|
 
     spec.subspec 'StaticFramework' do |ss|
         ss.vendored_frameworks          = 'Static/Framework/iMSLCoreKit.framework'
-        ss.source_files                 = 'Static/Framework/iMSLCoreKit.framework/Versions/A/Headers/*.h'
+        ss.source_files                 = [
+            'Static/Framework/iMSLCoreKit.framework/Versions/A/Headers/*.h',
+            'Static/Framework/iMSLCoreKit.framework/Versions/A/PrivateHeaders/*.h'
+        ]
         ss.public_header_files          = 'Static/Framework/iMSLCoreKit.framework/Versions/A/Headers/*.h'
         ss.private_header_files         = 'Static/Framework/iMSLCoreKit.framework/Versions/A/PrivateHeaders/*.h'
 
