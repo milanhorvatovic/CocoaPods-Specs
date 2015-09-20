@@ -28,7 +28,7 @@ Pod::Spec.new do |spec|
     spec.subspec 'Static' do |ss|
         ss.vendored_libraries           = 'Static/Library/libiMSLCoreKit.a'
         ss.source_files                 = 'Static/Library/Headers/*.h'
-        ss.public_header_files          = 'Static/Library/Headers/*.h'
+#        ss.public_header_files          = 'Static/Library/Headers/*.h'
 #        ss.private_header_files         = 'Static/Library/PrivateHeaders/*.h'
 
         ss.ios.deployment_target        = "7.0"
@@ -40,14 +40,14 @@ Pod::Spec.new do |spec|
             'Static/Framework/iMSLCoreKit.framework/Versions/A/Headers/*.h'
 #            , 'Static/Framework/iMSLCoreKit.framework/Versions/A/PrivateHeaders/*.h'
         ]
-        ss.public_header_files          = 'Static/Framework/iMSLCoreKit.framework/Versions/A/Headers/*.h'
-        ss.private_header_files         = 'Static/Framework/iMSLCoreKit.framework/Versions/A/PrivateHeaders/*.h'
+#        ss.public_header_files          = 'Static/Framework/iMSLCoreKit.framework/Versions/A/Headers/*.h'
+#       ss.private_header_files         = 'Static/Framework/iMSLCoreKit.framework/Versions/A/PrivateHeaders/*.h'
 
         ss.ios.deployment_target        = "7.0"
     end
 
     spec.ios.framework              = 'UIKit', 'Foundation', 'CoreData'
-    spec.platform                   = :ios, "9.0"
+    spec.platform                   = :ios, "7.0"
     spec.requires_arc               = true
     spec.ios.dependency             'UICKeyChainStore'
     spec.ios.dependency             'JRSwizzle'
