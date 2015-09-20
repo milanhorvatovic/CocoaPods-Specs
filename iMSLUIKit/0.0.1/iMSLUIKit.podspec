@@ -31,7 +31,7 @@ Pod::Spec.new do |spec|
         ss.public_header_files          = 'Static/Library/Headers/*.h'
 #        ss.private_header_files         = 'Static/Library/PrivateHeaders/*.h'
         ss.vendored_libraries           = 'Static/Library/libiMSLUIKit.a'
-        ss.dependency                 'iMSLCoreKit/Static'
+#        ss.dependency                 'iMSLCoreKit/Static'
 
         ss.ios.deployment_target        = "7.1"
     end
