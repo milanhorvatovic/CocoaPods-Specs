@@ -27,10 +27,10 @@ Pod::Spec.new do |spec|
     end
 
     spec.subspec 'Static' do |ss|
-    #        ss.source_files                 = 'Static/iMSLUIKit.framework/Headers/*.h'
-    #        ss.public_header_files          = 'Static/iMSLUIKit.framework/Headers/*.h'
-    #        ss.private_header_files         = 'Static/iMSLUIKit.framework/PrivateHeaders/*.h'
-    #        ss.vendored_libraries           = 'Static/iMSLUIKit.framework'
+        ss.source_files                 = 'Static/Library/Headers/*.h'
+        ss.public_header_files          = 'Static/Library/Headers/*.h'
+#        ss.private_header_files         = 'Static/Library/PrivateHeaders/*.h'
+        ss.vendored_libraries           = 'Static/Library/libiMSLUIKit.a'
         ss.dependency                 'iMSLCoreKit/Static'
 
         ss.ios.deployment_target        = "7.1"
