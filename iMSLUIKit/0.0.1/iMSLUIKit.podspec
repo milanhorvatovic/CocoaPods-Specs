@@ -17,13 +17,23 @@ Pod::Spec.new do |spec|
     spec.default_subspec            = 'Dynamic'
 
     spec.subspec 'Dynamic' do |ss|
-        ss.source_files               = 'iMSLUIKit.framework/Headers/*.h'
-        ss.public_header_files        = 'iMSLUIKit.framework/Headers/*.h'
-        ss.private_header_files       = 'iMSLUIKit.framework/PrivateHeaders/*.h'
-        ss.vendored_frameworks        = 'iMSLUIKit.framework'
+        ss.source_files               = 'Dynamic/iMSLUIKit.framework/Headers/*.h'
+        ss.public_header_files        = 'Dynamic/iMSLUIKit.framework/Headers/*.h'
+        ss.private_header_files       = 'Dynamic/iMSLUIKit.framework/PrivateHeaders/*.h'
+        ss.vendored_frameworks        = 'Dynamic/iMSLUIKit.framework'
         ss.dependency                 'iMSLCoreKit/Dynamic'
 
         ss.ios.deployment_target      = "8.0"
+    end
+
+    spec.subspec 'Static' do |ss|
+    #        ss.source_files                 = 'Static/iMSLUIKit.framework/Headers/*.h'
+    #        ss.public_header_files          = 'Static/iMSLUIKit.framework/Headers/*.h'
+    #        ss.private_header_files         = 'Static/iMSLUIKit.framework/PrivateHeaders/*.h'
+    #        ss.vendored_libraries           = 'Static/iMSLUIKit.framework'
+        ss.dependency                 'iMSLCoreKit/Static'
+
+        ss.ios.deployment_target        = "7.1"
     end
 
     spec.ios.framework              = 'UIKit', 'Foundation', 'MapKit', 'QuartzCore'
