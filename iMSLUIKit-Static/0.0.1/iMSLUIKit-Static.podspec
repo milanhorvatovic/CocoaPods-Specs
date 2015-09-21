@@ -4,8 +4,8 @@ Pod::Spec.new do |spec|
     spec.version                    = '0.0.1'
     spec.homepage                   = 'https://www.google.com'
     spec.license                    = {
-        :type => 'Custom',
-        :text => 'Copyright (C) 2015 Milan Horvatovic. All Rights Reserved.'
+        :type => 'Copyright',
+        :text => 'Copyright (C) 2014-2015 Milan Horvatovic. All Rights Reserved.'
     }
     spec.authors                    = {
         'Milan Horvatovic' => 'imsoft.labs@gmail.com'
