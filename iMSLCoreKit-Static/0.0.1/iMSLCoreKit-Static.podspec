@@ -41,8 +41,8 @@ Pod::Spec.new do |spec|
             'Static/Framework/iMSLCoreKit.framework/Versions/A/Headers/*.h'
 #            , 'Static/Framework/iMSLCoreKit.framework/Versions/A/PrivateHeaders/*.h'
         ]
-        ss.public_header_files          = 'Static/Framework/iMSLCoreKit.framework/Versions/A/Headers/*.h'
-        ss.private_header_files         = 'Static/Framework/iMSLCoreKit.framework/Versions/A/PrivateHeaders/*.h'
+#        ss.public_header_files          = 'Static/Framework/iMSLCoreKit.framework/Versions/A/Headers/*.h'
+#        ss.private_header_files         = 'Static/Framework/iMSLCoreKit.framework/Versions/A/PrivateHeaders/*.h'
 
     end
 
