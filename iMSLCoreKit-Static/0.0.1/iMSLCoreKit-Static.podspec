@@ -20,7 +20,7 @@ Pod::Spec.new do |spec|
     spec.subspec 'Library' do |ss|
 
         ss.vendored_libraries           = 'Static/Library/libiMSLCoreKit.a'
-        ss.source_files                 = 'Static/Library/Headers/*.h', 'Static/Library/PrivateHeaders/*.h'
+        ss.source_files                 = 'Static/Library/Headers/*.h', 'Static/Library/Headers/Private/*.h'
         ss.public_header_files          = 'Static/Library/Headers/*.h'
 #        ss.private_header_files         = 'Static/Library/Headers/Private/*        ss.private_header_files         = 'Static/Library/PrivateHeaders/*.h'
 #        ss.xcconfig  =  {
