@@ -4,8 +4,8 @@ Pod::Spec.new do |spec|
     spec.version                    = '0.0.1'
     spec.homepage                   = 'https://www.google.com'
     spec.license                    = {
-        :type => 'Custom',
-        :text => 'Copyright (C) 2015 Milan Horvatovic. All Rights Reserved.'
+        :type => 'Copyright',
+        :text => 'Copyright (C) 2014-2015 Milan Horvatovic. All Rights Reserved.'
     }
     spec.authors                    = {
         'Milan Horvatovic' => 'imsoft.labs@gmail.com'
@@ -15,14 +15,14 @@ Pod::Spec.new do |spec|
         :git => 'https://github.com/milanhorvatovic/iMSLCoreKit.git',
         :tag => spec.version.to_s
     }
-    spec.default_subspec            = 'Dynamic'
+    spec.default_subspec            = 'Framework'
 
-    spec.subspec 'Dynamic' do |ss|
+    spec.subspec 'Framework' do |ss|
 
         ss.vendored_frameworks          = 'Dynamic/iMSLCoreKit.framework'
         ss.source_files                 = 'Dynamic/iMSLCoreKit.framework/Headers/*.h'
-        ss.public_header_files          = 'Dynamic/iMSLCoreKit.framework/Headers/*.h'
-        ss.private_header_files         = 'Dynamic/iMSLCoreKit.framework/PrivateHeaders/*.h'
+#        ss.public_header_files          = 'Dynamic/iMSLCoreKit.framework/Headers/*.h'
+#        ss.private_header_files         = 'Dynamic/iMSLCoreKit.framework/PrivateHeaders/*.h'
 
     end
 
