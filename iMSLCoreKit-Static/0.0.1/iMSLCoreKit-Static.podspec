@@ -29,6 +29,22 @@ Pod::Spec.new do |spec|
 
     end
 
+    spec.subspec 'Library' do |ss|
+
+        ss.vendored_libraries           = 'Static/Library/libiMSLCoreKit.a'
+        ss.source_files                 = 'Static/Library/Headers/*.h', 'Static/Library/Headers/Private/*.h'
+#        ss.public_header_files          = 'Static/Library/Headers/*.h'
+#        ss.private_header_files         = 'Static/Library/Headers/Private/*.h'
+#        ss.private_header_files         = 'Static/Library/PrivateHeaders/*.h'
+        ss.xcconfig  =  {
+            'LIBRARY_SEARCH_PATHS' => '"$(PODS_ROOT)/iMSLCoreKit"',
+            'HEADER_SEARCH_PATHS' => '"${PODS_ROOT}/Headers/iMSLCoreKit"'
+#                '"${PODS_ROOT}/Headers/Private/iMSLCoreKit-Static"'
+        }
+        ss.header_dir                   = 'iMSLCoreKit'
+
+    end
+
     spec.module_name                = 'iMSLCoreKit'
     spec.platform                   = :ios, "7.0"
     spec.ios.deployment_target      = "7.0"
