@@ -21,16 +21,15 @@ Pod::Spec.new do |spec|
 
         ss.vendored_libraries           = 'Static/Library/libiMSLCoreKit.a'
         ss.source_files                 = 'Static/Library/Headers/*.h', 'Static/Library/Headers/Private/*.h'
-        ss.public_header_files          = 'Static/Library/Headers/*.h'
-        ss.private_header_files         = 'Static/Library/Headers/Private/*.h'
+#        ss.public_header_files          = 'Static/Library/Headers/*.h'
+#        ss.private_header_files         = 'Static/Library/Headers/Private/*.h'
 #        ss.private_header_files         = 'Static/Library/PrivateHeaders/*.h'
-#        ss.xcconfig  =  {
-#            'LIBRARY_SEARCH_PATHS' => '"$(PODS_ROOT)/EstimoteSDK"',
-#            'HEADER_SEARCH_PATHS' => [
-#                '"${PODS_ROOT}/Headers/Public/iMSLCoreKit-Static"',
+        ss.xcconfig  =  {
+            'LIBRARY_SEARCH_PATHS' => '"$(PODS_ROOT)/iMSLCoreKit"',
+            'HEADER_SEARCH_PATHS' => '"${PODS_ROOT}/Headers/iMSLCoreKit"'
 #                '"${PODS_ROOT}/Headers/Private/iMSLCoreKit-Static"'
-#            ]
-#        }
+        }
+        ss.header_dir                   = 'iMSLCoreKit'
 
     end
 
