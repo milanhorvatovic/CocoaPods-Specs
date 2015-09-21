@@ -17,30 +17,30 @@ Pod::Spec.new do |spec|
     }
     spec.default_subspec            = 'Framework'
 
-    spec.subspec 'Library' do |ss|
-
-        ss.vendored_libraries           = 'Static/Library/libiMSLUIKit.a'
-        ss.source_files                 = [
-            'Static/Library/Headers/*.h'
-#            , 'Static/Library/PrivateHeaders/*.h'
-        ]
-#        ss.public_header_files          = 'Static/Library/Headers/*.h'
-#        ss.private_header_files         = 'Static/Library/PrivateHeaders/*.h'
-
-        ss.dependency                 'iMSLCoreKit-Static/Library'
-
-    end
-
     spec.subspec 'Framework' do |ss|
 
         ss.vendored_frameworks          = 'Static/Framework/iMSLUIKit.framework'
-        ss.source_files                 = [
-            'Static/Framework/iMSLUIKit.framework/Versions/A/Headers/*.h'
-#            , 'Static/Framework/iMSLUIKit.framework/Versions/A/PrivateHeaders/*.h'
-        ]
+        ss.source_files                 = 'Static/Framework/iMSLUIKit.framework/Versions/A/Headers/*.h', 'Static/Framework/iMSLUIKit.framework/Versions/A/PrivateHeaders/*.h'
 #        ss.public_header_files          = 'Static/Framework/iMSLUIKit.framework/Versions/A/Headers/*.h'
-#        ss.private_header_files         = 'Static/Framework/iMSLUIKit.framework/Versions/A/PrivateHeaders/*.h'
+#        ss.private_header_files         = 'Static/Framework/iMSLUIKit.framework/Versions/A/Headers/Private/*.h'
+        ss.header_dir                   = 'iMSLUIKit'
         ss.dependency                   'iMSLCoreKit-Static/Framework'
+
+    end
+
+    spec.subspec 'Library' do |ss|
+
+        ss.vendored_libraries           = 'Static/Library/libiMSLUIKit.a'
+        ss.source_files                 = 'Static/Library/Headers/*.h', 'Static/Library/Headers/Private/*.h'
+#        ss.public_header_files          = 'Static/Library/Headers/*.h'
+#        ss.private_header_files         = 'Static/Library/PrivateHeaders/*.h'
+        ss.xcconfig  =  {
+            'LIBRARY_SEARCH_PATHS' => '"$(PODS_ROOT)/iMSLUIKit"',
+            'HEADER_SEARCH_PATHS' => '"${PODS_ROOT}/Headers/iMSLUIKit"'
+#                '"${PODS_ROOT}/Headers/Private/iMSLUIKit-Static"'
+        }
+        ss.header_dir                   = 'iMSLUIKit'
+        ss.dependency                 'iMSLCoreKit-Static/Library'
 
     end
 
