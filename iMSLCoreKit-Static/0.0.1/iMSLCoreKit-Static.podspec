@@ -20,12 +20,10 @@ Pod::Spec.new do |spec|
     spec.subspec 'Framework' do |ss|
 
         ss.vendored_frameworks          = 'Static/Framework/iMSLCoreKit.framework'
-        ss.source_files                 = [
-            'Static/Framework/iMSLCoreKit.framework/Versions/A/Headers/*.h'
-#            , 'Static/Framework/iMSLCoreKit.framework/Versions/A/PrivateHeaders/*.h'
-        ]
+        ss.source_files                 = 'Static/Framework/iMSLCoreKit.framework/Versions/A/Headers/*.h', 'Static/Framework/iMSLCoreKit.framework/Versions/A/PrivateHeaders/*.h'
 #        ss.public_header_files          = 'Static/Framework/iMSLCoreKit.framework/Versions/A/Headers/*.h'
-#        ss.private_header_files         = 'Static/Framework/iMSLCoreKit.framework/Versions/A/PrivateHeaders/*.h'
+#        ss.private_header_files         = 'Static/Framework/iMSLCoreKit.framework/Versions/A/Headers/Private/*.h'
+        ss.header_dir                   = 'iMSLCoreKit'
 
     end
 
@@ -35,7 +33,6 @@ Pod::Spec.new do |spec|
         ss.source_files                 = 'Static/Library/Headers/*.h', 'Static/Library/Headers/Private/*.h'
 #        ss.public_header_files          = 'Static/Library/Headers/*.h'
 #        ss.private_header_files         = 'Static/Library/Headers/Private/*.h'
-#        ss.private_header_files         = 'Static/Library/PrivateHeaders/*.h'
         ss.xcconfig  =  {
             'LIBRARY_SEARCH_PATHS' => '"$(PODS_ROOT)/iMSLCoreKit"',
             'HEADER_SEARCH_PATHS' => '"${PODS_ROOT}/Headers/iMSLCoreKit"'
@@ -53,6 +50,5 @@ Pod::Spec.new do |spec|
     spec.ios.framework              = 'UIKit', 'Foundation', 'CoreData'
     spec.ios.dependency             'UICKeyChainStore'
     spec.ios.dependency             'JRSwizzle'
-
 
 end
