@@ -20,7 +20,7 @@ Pod::Spec.new do |spec|
     spec.subspec 'Framework' do |ss|
 
         ss.vendored_frameworks          = 'Dynamic/iMSLCoreKit.framework'
-        ss.source_files                 = 'Dynamic/iMSLCoreKit.framework/Headers/*.h'
+        ss.source_files                 = 'Dynamic/iMSLCoreKit.framework/Headers/*.h', 'Dynamic/iMSLCoreKit.framework/Headers/Private/*.h'
 #        ss.public_header_files          = 'Dynamic/iMSLCoreKit.framework/Headers/*.h'
 #        ss.private_header_files         = 'Dynamic/iMSLCoreKit.framework/PrivateHeaders/*.h'
 
