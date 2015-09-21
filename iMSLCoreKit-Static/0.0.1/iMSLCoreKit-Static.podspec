@@ -4,8 +4,8 @@ Pod::Spec.new do |spec|
     spec.version                    = '0.0.1'
     spec.homepage                   = 'https://www.google.com'
     spec.license                    = {
-        :type => 'Custom',
-        :text => 'Copyright (C) 2015 Milan Horvatovic. All Rights Reserved.'
+        :type => 'Copyright',
+        :text => 'Copyright (C) 2014-2015 Milan Horvatovic. All Rights Reserved.'
     }
     spec.authors                    = {
         'Milan Horvatovic' => 'imsoft.labs@gmail.com'
@@ -20,12 +20,16 @@ Pod::Spec.new do |spec|
     spec.subspec 'Library' do |ss|
 
         ss.vendored_libraries           = 'Static/Library/libiMSLCoreKit.a'
-        ss.source_files                 = [
-            'Static/Library/Headers/*.h'
-#            , 'Static/Library/PrivateHeaders/*.h'
-        ]
-#        ss.public_header_files          = 'Static/Library/Headers/*.h'
-#        ss.private_header_files         = 'Static/Library/PrivateHeaders/*.h'
+        ss.source_files                 = 'Static/Library/Headers/*.h', 'Static/Library/PrivateHeaders/*.h'
+        ss.public_header_files          = 'Static/Library/Headers/*.h'
+#        ss.private_header_files         = 'Static/Library/Headers/Private/*        ss.private_header_files         = 'Static/Library/PrivateHeaders/*.h'
+#        ss.xcconfig  =  {
+#            'LIBRARY_SEARCH_PATHS' => '"$(PODS_ROOT)/EstimoteSDK"',
+#            'HEADER_SEARCH_PATHS' => [
+#                '"${PODS_ROOT}/Headers/Public/iMSLCoreKit-Static"',
+#                '"${PODS_ROOT}/Headers/Private/iMSLCoreKit-Static"'
+#            ]
+#        }
 
     end
 
@@ -37,7 +41,7 @@ Pod::Spec.new do |spec|
 #            , 'Static/Framework/iMSLCoreKit.framework/Versions/A/PrivateHeaders/*.h'
         ]
 #        ss.public_header_files          = 'Static/Framework/iMSLCoreKit.framework/Versions/A/Headers/*.h'
-#       ss.private_header_files         = 'Static/Framework/iMSLCoreKit.framework/Versions/A/PrivateHeaders/*.h'
+#        ss.private_header_files         = 'Static/Framework/iMSLCoreKit.framework/Versions/A/PrivateHeaders/*.h'
 
     end
 
