@@ -19,18 +19,17 @@ Pod::Spec.new do |spec|
 
     spec.subspec 'Framework' do |ss|
 
-        ss.vendored_frameworks          = 'Static/Framework/iMSLUIKit.framework'
-        ss.source_files                 = 'Static/Framework/iMSLUIKit.framework/Versions/A/Headers/*.h', 'Static/Framework/iMSLUIKit.framework/Versions/A/PrivateHeaders/*.h'
-#        ss.public_header_files          = 'Static/Framework/iMSLUIKit.framework/Versions/A/Headers/*.h'
-#        ss.private_header_files         = 'Static/Framework/iMSLUIKit.framework/Versions/A/Headers/Private/*.h'
-        ss.header_dir                   = 'iMSLUIKit'
-        ss.dependency                   'iMSLCoreKit'
+        ss.vendored_frameworks          = 'iMSLUIKit.framework'
+        ss.source_files                 = 'iMSLUIKit.framework/Headers/*.h'
+        ss.public_header_files          = 'iMSLUIKit.framework/Headers/*.h'
+        ss.private_header_files         = 'iMSLUIKit.framework/PrivateHeaders/*.h'
+        ss.dependency                   'iMSLCoreKit', '0.0.1'
 
     end
 
     spec.module_name                = 'iMSLUIKit'
     spec.platform                   = :ios, "7.0"
-#    spec.ios.deployment_target      = "7.0"
+    spec.ios.deployment_target      = "7.0"
     spec.requires_arc               = true
 
     spec.ios.framework              = 'UIKit', 'Foundation', 'MapKit', 'QuartzCore'
