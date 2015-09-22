@@ -28,7 +28,7 @@ Pod::Spec.new do |spec|
 
     end
 
-#    spec.module_name                = 'iMSLCoreKit'
+    spec.module_name                = 'iMSLCoreKit'
     spec.platform                   = :ios, "7.0"
 #    spec.ios.deployment_target      = "7.0"
     spec.requires_arc               = true
