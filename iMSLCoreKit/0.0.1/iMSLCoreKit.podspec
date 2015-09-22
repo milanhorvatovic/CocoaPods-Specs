@@ -19,18 +19,18 @@ Pod::Spec.new do |spec|
 
     spec.subspec 'Framework' do |ss|
 
-        ss.vendored_frameworks          = 'Static/Framework/iMSLCoreKit.framework'
-#        ss.source_files                 = 'Static/Framework/iMSLCoreKit.framework/Headers/*.h'
-#        ss.public_header_files          = 'Static/Framework/iMSLCoreKit.framework/Headers/*.h'
-#        ss.public_header_files          = 'Static/Framework/iMSLCoreKit.framework/Versions/A/Headers/*.h'
-#        ss.private_header_files         = 'Static/Framework/iMSLCoreKit.framework/Versions/A/Headers/Private/*.h'
-#        ss.header_dir                   = 'iMSLCoreKit'
+        ss.vendored_frameworks          = 'iMSLCoreKit.framework'
+#        ss.source_files                 = 'iMSLCoreKit.framework/Headers/*.h'
+#        ss.public_header_files          = 'iMSLCoreKit.framework/Headers/*.h'
+#        ss.public_header_files          = 'iMSLCoreKit.framework/Headers/*.h'
+#        ss.private_header_files         = 'iMSLCoreKit.framework/PrivateHeaders/*.h'
+        ss.header_dir                   = 'iMSLCoreKit'
 
     end
 
     spec.module_name                = 'iMSLCoreKit'
     spec.platform                   = :ios, "7.0"
-#    spec.ios.deployment_target      = "7.0"
+    spec.ios.deployment_target      = "7.0"
     spec.requires_arc               = true
 
     spec.ios.framework              = 'UIKit', 'Foundation', 'CoreData'
