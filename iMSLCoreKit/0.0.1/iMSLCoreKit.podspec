@@ -15,14 +15,23 @@ Pod::Spec.new do |spec|
         :git => 'https://github.com/milanhorvatovic/iMSLCoreKit.git',
         :tag => spec.version.to_s
     }
-    spec.default_subspec            = 'Framework'
+    spec.default_subspec            = 'Bitcode'
 
-    spec.subspec 'Framework' do |ss|
+    spec.subspec 'Bitcode' do |ss|
 
         ss.vendored_frameworks          = 'iMSLCoreKit.framework'
         ss.source_files                 = 'iMSLCoreKit.framework/Headers/*.h'
         ss.public_header_files          = 'iMSLCoreKit.framework/Headers/*.h'
         ss.private_header_files         = 'iMSLCoreKit.framework/PrivateHeaders/*.h'
+
+    end
+
+    spec.subspec 'BitcodeNO' do |ss|
+
+        ss.vendored_frameworks          = 'BitcodeNO/iMSLCoreKit.framework'
+        ss.source_files                 = 'BitcodeNO/iMSLCoreKit.framework/Headers/*.h'
+        ss.public_header_files          = 'BitcodeNO/iMSLCoreKit.framework/Headers/*.h'
+        ss.private_header_files         = 'BitcodeNO/iMSLCoreKit.framework/PrivateHeaders/*.h'
 
     end
 
