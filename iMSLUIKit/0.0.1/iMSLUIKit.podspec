@@ -15,15 +15,25 @@ Pod::Spec.new do |spec|
         :git => 'https://github.com/milanhorvatovic/iMSLUIKit.git',
         :tag => '0.0.1'
     }
-    spec.default_subspec            = 'Framework'
+    spec.default_subspec            = 'Bitcode'
 
-    spec.subspec 'Framework' do |ss|
+    spec.subspec 'Bitcode' do |ss|
 
         ss.vendored_frameworks          = 'iMSLUIKit.framework'
         ss.source_files                 = 'iMSLUIKit.framework/Headers/*.h'
         ss.public_header_files          = 'iMSLUIKit.framework/Headers/*.h'
         ss.private_header_files         = 'iMSLUIKit.framework/PrivateHeaders/*.h'
         ss.dependency                   'iMSLCoreKit', '0.0.1'
+
+    end
+
+    spec.subspec 'BitcodeNO' do |ss|
+
+        ss.vendored_frameworks          = 'BitcodeNO/iMSLUIKit.framework'
+        ss.source_files                 = 'BitcodeNO/iMSLUIKit.framework/Headers/*.h'
+        ss.public_header_files          = 'BitcodeNO/iMSLUIKit.framework/Headers/*.h'
+        ss.private_header_files         = 'BitcodeNO/iMSLUIKit.framework/PrivateHeaders/*.h'
+        ss.dependency                   'iMSLCoreKit/BitcodeNO', '0.0.1'
 
     end
 
