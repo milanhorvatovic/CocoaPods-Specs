@@ -37,6 +37,10 @@ Pod::Spec.new do |spec|
 
     end
 
+    spec.xcconfig = {
+        'OTHER_LDFLAGS' => '-ObjC -all_load'
+    }
+
     spec.module_name                = 'iMSLUIKit'
     spec.platform                   = :ios, "7.0"
     spec.ios.deployment_target      = "7.0"
